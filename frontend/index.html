@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Vadlamudi</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navBar">
+        <div class="logo">
+            <h3 id="headerName"><a class="navLink" href="#vaish">Vaishnavi Vadlamudi</a></h3>
+        </div>
+        <div class="content" id="navLinks">
+            <h3 class="contents"><a class="navLink" href="#about">About</a></h3>
+            <h3 class="contents"><a class="navLink" href="#projects">Projects</a></h3>
+            <h3 class="contents"><a class="navLink" href="#contact">Contact</a></h3>
+        </div>
+
+        <div class="hamburgerMenu" id="hamburgerBtn">
+            <button class="hamburgerButton">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </div>
+
+    </nav>
+    <section id="vaish">
+        <img src="assets/logo.png" alt="logo" class="logoImage">
+        <img src="assets/dev.png" alt="logo" class="devImage">
+        <div id="intro">
+            <h3 class="profession">Software Engineer</h3>
+            <h1 class="welcome">Hello, my name is Vaishnavi Vadlamudi</h1>
+            <h3 class="description">Building modern web applications as a Full-Stack Engineer, combining clean code,
+                performance, and user-focused design.</h3>
+            <div class="btns">
+                <a href="#projects"><button class="projects">Projects</button></a>
+                <a href="#contact"><button class="contact">Contact</button></a>
+            </div>
+        </div>
+    </section>
+    <span class="divider"></span>
+    <!-- About -->
+    <section id="about">
+        <div>
+            <h1 class="heading">About</h1>
+            <span class="line"></span>
+        </div>
+        <div id="aboutMe">
+            <p class="aboutPara">I am a Full-Stack Software Engineer with experience building scalable and efficient web
+                applications. I
+                specialize in developing end-to-end solutions, combining modern frontend technologies to create
+                intuitive and responsive user interfaces with robust backend systems for data management and business
+                logic. Skilled in working with RESTful APIs, databases, and cloud services, I focus on writing clean,
+                maintainable code while ensuring optimal performance and user experience. I am passionate about solving
+                complex problems, learning new technologies, and delivering reliable, high-quality software.
+            </p>
+            <a target="_blank" href="https://www.linkedin.com/in/vaishnavi-vadlamudi-7310a1158/"><button
+                    class="projects">Know More</button></a>
+        </div>
+        <div id="skills-container">
+        </div>
+    </section>
+    <span class="divider"></span>
+    <!-- projects -->
+    <section id="projects">
+        <div>
+            <h1 class="heading">Projects</h1>
+            <span class="line"></span>
+        </div>
+
+        <div class="cards" id="cardContainer"></div>
+    </section>
+    <span class="divider"></span>
+    <!-- contact -->
+    <section id="contact">
+        <div>
+            <h1 class="heading">Contact</h1>
+            <span class="line"></span>
+        </div>
+        <form class="contact-me" action="mailto:vaishnavivadlamudi259@gmail.com" method="post" enctype="text/plain">
+            <span class="contact-description">Get in touch with me!</span>
+            <input type="text" class="contactInput" placeholder="Your Name">
+            <input type="email" class="contactInput" placeholder="Your Email">
+            <span class="contact-description">Feel free to reach out for collaborations or just a friendly hello!</span>
+            <textarea style="resize: none;" rows="4" cols="50" class="contactInput" placeholder="Your Message"
+                maxlength="150"></textarea>
+            <button class="sendButton">Send</button>
+            <span class="contact-description">You can also find me on social media platforms.</span>
+            <div class="footer">
+                <div class="contactInfo"><a href="https://github.com/V-codess/"><img class="footerImages"
+                            src="assets/insta.png" alt="Instagram"></a></div>
+                <div class="contactInfo"><a href="https://www.linkedin.com/in/vaishnavi-vadlamudi-7310a1158/"><img
+                            class="footerImages" src="assets/linkedin.png" alt="LinkedIn"></a></div>
+                <div class="contactInfo"><a href="mailto:vaishnavivadlamudi259@gmail.com"><img class="footerImages"
+                            src="assets/email.png" alt="Email"></a>
+                </div>
+            </div>
+            <h1 id="endCreds"></h1>
+
+        </form>
+
+        <img src="assets/end.png" alt="logo" class="endImage">
+    </section>
+    <script src="index.js"></script>
+</body>
+
+</html>
