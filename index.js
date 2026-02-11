@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="cardContent">
           <h2 class="cardTitle">${project.title}</h2>
           <p class="cardDescription">${project.description}</p>
-          <a href = "${project.link}"><button class="cardButton">View Project</button></a>
+          <a target="_blank" href = "${project.link}"><button class="cardButton">View Project</button></a>
         </div>
       </div>
     `
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="cardContent">
           <h2 class="cardTitle">${project.title}</h2>
           <p class="cardDescription">${project.description}</p>
-          <a href="${project.link}"><button class="cardButton">View Project</button></a>
+          <a target="_blank" href="${project.link}"><button class="cardButton">View Project</button></a>
         </div>
         <img src="${project.image}" alt="${project.title}" class="cardImage">
       </div>
