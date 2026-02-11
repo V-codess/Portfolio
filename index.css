@@ -482,5 +482,10 @@ section {
         width: 100%;
         height: auto;
       }
+      .line{
+        width: 20%;
+        justify-self: center;
+        align-items: center;
+      }
 
 }
