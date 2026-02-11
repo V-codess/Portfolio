@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/assets/icon.png" type="image/png">
     <link
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
@@ -85,18 +86,18 @@
             <h1 class="heading">Contact</h1>
             <span class="line"></span>
         </div>
-        <form class="contact-me" action="mailto:vaishnavivadlamudi259@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-me" action="https://formsubmit.co/735dda0fbef2b335a5792e6689dd5417" method="POST" type="email">
+              <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
+              <input type="hidden" name="_captcha" value="false">
             <span class="contact-description">Get in touch with me!</span>
-            <input type="text" class="contactInput" placeholder="Your Name">
-            <input type="email" class="contactInput" placeholder="Your Email">
+            <input type="text" class="contactInput" placeholder="Your Name" required="true">
+            <input type="email" class="contactInput" placeholder="Your Email" required="true">
             <span class="contact-description">Feel free to reach out for collaborations or just a friendly hello!</span>
             <textarea style="resize: none;" rows="4" cols="50" class="contactInput" placeholder="Your Message"
-                maxlength="150"></textarea>
-            <button class="sendButton">Send</button>
+                maxlength="150" required="true"></textarea>
+            <button type="submit" class="sendButton">Send</button>
             <span class="contact-description">You can also find me on social media platforms.</span>
             <div class="footer">
-                <div class="contactInfo"><a href="https://github.com/V-codess/"><img class="footerImages"
-                            src="assets/insta.png" alt="Instagram"></a></div>
                 <div class="contactInfo"><a href="https://www.linkedin.com/in/vaishnavi-vadlamudi-7310a1158/"><img
                             class="footerImages" src="assets/linkedin.png" alt="LinkedIn"></a></div>
                 <div class="contactInfo"><a href="mailto:vaishnavivadlamudi259@gmail.com"><img class="footerImages"

@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
  },
 {
     name:"ReactJS",
-    range: 60 
+    range: 80 
  },
  {
     name:"React Native",
-    range: 50 
+    range: 70 
  },
  {
     name:"MongoDB",
