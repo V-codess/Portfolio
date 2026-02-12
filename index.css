@@ -12,7 +12,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: #fff;
-    font-family: "Comfortaa", sans-serif;
+    font-family: "Playfair Display", serif;
     min-height: 100%;
 }
 
@@ -700,13 +700,16 @@ box-shadow: 0 10px 12px #999797;
     }
 
     .skill-card {
-        width: 100%;
+        width: 70%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         margin: 1em 1rem;
     }
-
+    .skill-card:hover{
+        transform: translateY(-5px); 
+        box-shadow: 0 10px 12px #999797;
+    }
     .tech-stack {
         width: 200%;
     }
@@ -737,7 +740,7 @@ box-shadow: 0 10px 12px #999797;
         margin-top: 1rem;
     }
 
-    .card:nth-child(even) {
+    .card:nth-child(odd) {
         flex-direction: column-reverse;
          width: 90%;
          display: flex;

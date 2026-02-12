@@ -53,21 +53,20 @@ document.addEventListener("DOMContentLoaded", function () {
        whatItDoes: [
         {
           service:
-            "Practiced schema modeling",
+            "Practiced schema modeling.",
         },
         {
-          service: "Integrated AWS S3 for storing book cover images. Avoided local disk storage to prevent data loss in containerized environments",
+          service: "Integrated AWS S3 for storing book cover images.",
         },
         {
-          service: "JWT with refresh tokens for secure stateless auth",
+          service: "JWT with refresh tokens for secure stateless auth.",
         },
       ],
-      problemStatement:"The application supports full CRUD operations for managing books while securely storing book cover images in AWS S3 instead of local disk storage. This design ensures scalability, durability, and cloud readiness for production environments.",
       testing:"Postman collection for API testing",
       postmanLink:"",
     },
     {
-      title: "Task Manager REST API (Node.js, Express, MongoDB, JWT, Async Patterns)",
+      title: "Task Manager REST API (Node.js, Express, MongoDB, JWT)",
       description:
         "Task Manager / To-Do App – A web application to organize tasks efficiently. Users can add, update, mark as complete, and delete tasks, helping manage daily activities and improve productivity.",
       link: "https://github.com/V-codess/Task-Manager-API",
@@ -85,13 +84,12 @@ document.addEventListener("DOMContentLoaded", function () {
             "Secure API with hashed passwords and JWTs. Built complete REST API with filtering & pagination",
         },
         {
-          service: "Error handling middleware for consistency. Used async/await for clean async code.",
+          service: "Error handling middleware for consistency.",
         },
         {
           service: "JWT with refresh tokens for secure stateless auth",
         },
       ],
-      problemStatement:"Built a secure task management REST API focused on user productivity, session-based auth, and ownership of resources.",
       testing:"Postman collection for API testing",
       postmanLink:"https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-1adc29b9-9945-45df-bf51-d7c747470595?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
     },
@@ -113,16 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
           service:"Microservices to enable team independence and fault isolation. Designed horizontally scalable backend.",
         },
         {
-          service: "Redis Cache to reduce DB load for frequent reads. Improved API performance via Redis caching.",
+          service: "Redis Cache to reduce DB load for frequent reads.",
         },
         {
-          service: "JWT with refresh tokens for secure stateless auth. Containerized and orchestrated multi-service app.",
+          service: "JWT with refresh tokens for secure stateless auth.",
         },
       ],
       testing:"Postman collection for API testing",
       postmanLink:"https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-24c3de5c-5b7d-452b-9935-182819c909c3?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
-      problemStatement:
-        "Built a scalable microservices-based eCommerce backend with decoupled services for orders, products, users, and notifications. Designed to support multiple teams independently developing and deploying features.",
       link: "https://github.com/V-codess/ecommerce-microservices",
     },
   ];
@@ -153,8 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 .join("") || ""
             }
            </ul>
-          <h6 class="cardStack">Problem Statement</h6>
-          <p class="cardDescription">${project.problemStatement}</p>
           <h6 class="cardStack">API Testing</h6>
           <p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>
           <a target="_blank" href = "${project.link}"><button class="cardButton">View Project</button></a>
@@ -181,8 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 .join("") || ""
             }
            </ul>
-          <h6 class="cardStack">Problem this solves</h6>
-          <p class="cardDescription">${project.problemStatement}</p>
           <h6 class="cardStack">API Testing</h6>
           <p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>
           <a target="_blank" href="${project.link}"><button class="cardButton">View Project</button></a>
