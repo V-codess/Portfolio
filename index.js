@@ -36,30 +36,99 @@ document.addEventListener("DOMContentLoaded", function () {
   // display project cards
   const projects = [
     {
-      title: "Book Manager API",
+      title: "Books Catalog API (Node.js, Express, MongoDB)",
       description:
         "Book Manager API - A RESTful API to manage books efficiently. Allows adding, updating, deleting, and searching books with JSON responses, ideal for libraries, personal collections, or app integration.",
       image: "assets/books.png",
       link: "https://github.com/V-codess/books-api",
+      techStack: [
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "REST",
+        "AWS S3",
+        "Multer"
+      ],
+       whatItDoes: [
+        {
+          service:
+            "Practiced schema modeling",
+        },
+        {
+          service: "Integrated AWS S3 for storing book cover images. Avoided local disk storage to prevent data loss in containerized environments",
+        },
+        {
+          service: "JWT with refresh tokens for secure stateless auth",
+        },
+      ],
+      problemStatement:"The application supports full CRUD operations for managing books while securely storing book cover images in AWS S3 instead of local disk storage. This design ensures scalability, durability, and cloud readiness for production environments.",
+      testing:"Postman collection for API testing",
+      postmanLink:"",
     },
     {
-      title: "Task Manager API",
+      title: "Task Manager REST API (Node.js, Express, MongoDB, JWT, Async Patterns)",
       description:
         "Task Manager / To-Do App – A web application to organize tasks efficiently. Users can add, update, mark as complete, and delete tasks, helping manage daily activities and improve productivity.",
       link: "https://github.com/V-codess/Task-Manager-API",
       image: "assets/task.png",
+      techStack: [
+        "Node.js",
+        "Express",
+        "Bcrypt",
+        "Postman",
+        "JWT auth",
+      ],
+       whatItDoes: [
+        {
+          service:
+            "Secure API with hashed passwords and JWTs. Built complete REST API with filtering & pagination",
+        },
+        {
+          service: "Error handling middleware for consistency. Used async/await for clean async code.",
+        },
+        {
+          service: "JWT with refresh tokens for secure stateless auth",
+        },
+      ],
+      problemStatement:"Built a secure task management REST API focused on user productivity, session-based auth, and ownership of resources.",
+      testing:"Postman collection for API testing",
+      postmanLink:"https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-1adc29b9-9945-45df-bf51-d7c747470595?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
     },
     {
-      title: "E-Com using Microservices",
+      title: "Ecommerce Microservices Backend (Node.js, Docker)",
       description:
-        "E-Commerce Platform (Microservices) – A scalable e-commerce application built with microservices architecture. Each service (products, orders, users, payments) operates independently, enabling flexibility, faster development, and seamless integration, while ensuring reliability and performance in handling online shopping operations.",
+        "Microservices e-commerce backend built using Node.js, Express, MongoDB, PostgreSQL, Docker, and Nginx. This project demonstrates scalable architecture, JWT authentication, role-based access control.",
       image: "assets/ecom.png",
+      techStack: [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Docker",
+        "Redis",
+        "JWT auth",
+      ],
+      whatItDoes: [
+        {
+          service:"Microservices to enable team independence and fault isolation. Designed horizontally scalable backend.",
+        },
+        {
+          service: "Redis Cache to reduce DB load for frequent reads. Improved API performance via Redis caching.",
+        },
+        {
+          service: "JWT with refresh tokens for secure stateless auth. Containerized and orchestrated multi-service app.",
+        },
+      ],
+      testing:"Postman collection for API testing",
+      postmanLink:"https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-24c3de5c-5b7d-452b-9935-182819c909c3?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
+      problemStatement:
+        "Built a scalable microservices-based eCommerce backend with decoupled services for orders, products, users, and notifications. Designed to support multiple teams independently developing and deploying features.",
       link: "https://github.com/V-codess/ecommerce-microservices",
     },
   ];
   const container = document.getElementById("cardContainer");
 
-  projects.forEach((project, index) => {
+  projects.map((project, index) => {
     const isEven = (index + 1) % 2 === 0;
     container.innerHTML += isEven
       ? `
@@ -68,6 +137,26 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="cardContent">
           <h2 class="cardTitle">${project.title}</h2>
           <p class="cardDescription">${project.description}</p>
+          <h6 class="cardStack">Tech Stack</h6>
+           <ul class="cardList">
+            ${
+              project.techStack
+                .map((tech) => `<li  class="list-item">${tech}</li>`)
+                .join("") || ""
+            }
+           </ul>
+            <h6 class="cardStack">Outcomes</h6>
+            <ul style="list-style: none;">
+            ${
+              project.whatItDoes
+                .map((tech) => `<li  class="cardDescription">${tech.service}</li>`)
+                .join("") || ""
+            }
+           </ul>
+          <h6 class="cardStack">Problem Statement</h6>
+          <p class="cardDescription">${project.problemStatement}</p>
+          <h6 class="cardStack">API Testing</h6>
+          <p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>
           <a target="_blank" href = "${project.link}"><button class="cardButton">View Project</button></a>
         </div>
       </div>
@@ -77,45 +166,101 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="cardContent">
           <h2 class="cardTitle">${project.title}</h2>
           <p class="cardDescription">${project.description}</p>
+          <h6 class="cardStack">Tech Stack</h6>
+           <ul class="cardList">
+            ${
+              project.techStack
+                .map((tech) => `<li class="list-item">${tech}</li>`).join("") || ""
+            }
+           </ul>
+            <h6 class="cardStack">Outcomes</h6>
+            <ul style="list-style: none;">
+            ${
+              project.whatItDoes
+                .map((tech) => `<li class="cardDescription">${tech.service}</li>`)
+                .join("") || ""
+            }
+           </ul>
+          <h6 class="cardStack">Problem this solves</h6>
+          <p class="cardDescription">${project.problemStatement}</p>
+          <h6 class="cardStack">API Testing</h6>
+          <p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>
           <a target="_blank" href="${project.link}"><button class="cardButton">View Project</button></a>
         </div>
         <img src="${project.image}" alt="${project.title}" class="cardImage">
       </div>
     `;
   });
- // display skills
- const skills = [{
-    name:"JavaScript",
-    range: 70
- },
-{
-    name:"NodeJS",
-    range: 80
- },
-{
-    name:"ReactJS",
-    range: 80 
- },
- {
-    name:"React Native",
-    range: 70 
- },
- {
-    name:"MongoDB",
-    range: 80 
- },
-]
+  // display skills
+  const skills = [
+    {
+      name: "Backend Engineering",
+      list: [{
+        name:"REST API Design & TypeScript Integration"
+      },{
+        name:"Middleware Architecture"
+      },
+    {
+        name:"Authentication (JWT)"
+      },{
+        name:"Input Validation & Error Handling"
+      }],
+    },
+    {
+      name: "Databases & Data Modeling",
+      list: [{
+        name:"MongoDB Schema Design"
+      },{
+        name:"PostgreSQL Relational Modeling"
+      },
+    {
+        name:"Indexing & Query Optimization"
+      },{
+        name:"Pagination & Filtering"
+      }],
+    },
+    {
+      name: "Cloud & Infrastructure",
+      list: [{
+        name:"Microservices Architecture"
+      },{
+        name:"Docker Containerization"
+      },
+    {
+        name:"Environment Configuration"
+      },{
+        name:"AWS services"
+      }],
+    },
+    {
+      name: "Frontend Collaboration",
+      list: [{
+        name:"React API Integration"
+      },{
+        name:"Redux/Context State Management"
+      },
+    {
+        name:"Backend-Frontend Contract Design"
+      }, {
+        name:"Mobile app development with React Native"
+      }],
+    },
+  ];
   const skillsContainer = document.getElementById("skills-container");
-  skills.forEach((skill)=>{
-     skillsContainer.innerHTML += `<div class="skill">
-                <div class="circle" style="--percentage: ${skill.range};">
-                    <div class="insideCircle">
-                        <span class="percentageData">${skill.range}%</span>
-                    </div>
-                </div>
-                <p class="skillText">${skill.name}</p>
-            </div>`
-  })
+  skills.forEach((skill) => {
+    skillsContainer.innerHTML += `<div class="skill-card">
+        <div>
+          <h2 class="skill-cardTitle">${skill.name}</h2>
+           <ul class="skill-cardList">
+            ${
+              skill.list
+                .map((tech) => `<li  class="skill-cardDescription">${tech.name}</li>`)
+                .join("") || ""
+            }
+           </ul>
+        </div>
+      </div>`;
+  });
 
   // Close mobile menu on link click
   navLinks.forEach((link) => {
