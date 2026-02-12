@@ -340,20 +340,21 @@ section {
     display: flex;
     align-items: flex-start;
 }
-
+.each-card{
+    justify-content: flex-start;
+    width: 100%;
+     display: flex;
+    justify-content: space-evenly;
+   flex-direction: column;
+    justify-self: center;
+}
 .skill-card {
-    background-color: #fff;
+    background-color:#fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px #c2c0c0;
     padding: 1rem;
     margin: 1rem;
     width: 20%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-self: center;
 }
 .skill-card:hover{
 transform: translateY(-10px); 
@@ -426,6 +427,9 @@ box-shadow: 0 10px 12px #999797;
     font-weight: 600;
     gap: 2rem;
     text-align: left;
+    display: flex;
+    justify-items: flex-start;
+    align-items: flex-start;
 }
 
 .cardTitle {

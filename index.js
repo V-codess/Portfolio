@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
           service: "Error handling middleware for consistency.",
         },
         {
-          service: "JWT with refresh tokens for secure stateless auth",
+          service: "Each user can create, delete, update tasks.",
         },
       ],
       testing: "Postman collection for API testing",
@@ -262,7 +262,7 @@ ${apiLiveLink}          <a target="_blank" href="${project.link}"><button class=
   const skillsContainer = document.getElementById("skills-container");
   skills.forEach((skill) => {
     skillsContainer.innerHTML += `<div class="skill-card">
-        <div>
+        <div class="each-card">
           <h2 class="skill-cardTitle">${skill.name}</h2>
            <ul class="skill-cardList">
             ${
