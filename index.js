@@ -47,23 +47,22 @@ document.addEventListener("DOMContentLoaded", function () {
         "Express",
         "MongoDB",
         "REST",
-        "AWS S3",
-        "Multer"
       ],
-       whatItDoes: [
+      whatItDoes: [
         {
-          service:
-            "Practiced schema modeling.",
+          service: "Practiced schema modeling.",
         },
         {
-          service: "Integrated AWS S3 for storing book cover images.",
+          service: "Built complete REST API with filtering & pagination.",
         },
         {
-          service: "JWT with refresh tokens for secure stateless auth.",
+          service: "Deployed using Railway.",
         },
       ],
-      testing:"Postman collection for API testing",
-      postmanLink:"",
+      testing: "Postman collection for API testing",
+      liveApiLink: "https://books-api-production-838a.up.railway.app/allBooks",
+      postmanLink:
+        "https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-570054d2-e676-4454-9059-fe16aa56dc78?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
     },
     {
       title: "Task Manager REST API (Node.js, Express, MongoDB, JWT)",
@@ -71,17 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "Task Manager / To-Do App – A web application to organize tasks efficiently. Users can add, update, mark as complete, and delete tasks, helping manage daily activities and improve productivity.",
       link: "https://github.com/V-codess/Task-Manager-API",
       image: "assets/task.png",
-      techStack: [
-        "Node.js",
-        "Express",
-        "Bcrypt",
-        "Postman",
-        "JWT auth",
-      ],
-       whatItDoes: [
+      techStack: ["Node.js", "Express", "Bcrypt", "Postman", "JWT auth"],
+      whatItDoes: [
         {
           service:
-            "Secure API with hashed passwords and JWTs. Built complete REST API with filtering & pagination",
+            "Secure API with hashed passwords and JWTs.",
         },
         {
           service: "Error handling middleware for consistency.",
@@ -90,8 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
           service: "JWT with refresh tokens for secure stateless auth",
         },
       ],
-      testing:"Postman collection for API testing",
-      postmanLink:"https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-1adc29b9-9945-45df-bf51-d7c747470595?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
+      testing: "Postman collection for API testing",
+      apiLiveLink:"",
+      postmanLink:
+        "https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-1adc29b9-9945-45df-bf51-d7c747470595?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
     },
     {
       title: "Ecommerce Microservices Backend (Node.js, Docker)",
@@ -108,7 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       whatItDoes: [
         {
-          service:"Microservices to enable team independence and fault isolation. Designed horizontally scalable backend.",
+          service:
+            "Microservices to enable team independence and fault isolation. Designed horizontally scalable backend.",
         },
         {
           service: "Redis Cache to reduce DB load for frequent reads.",
@@ -117,14 +113,19 @@ document.addEventListener("DOMContentLoaded", function () {
           service: "JWT with refresh tokens for secure stateless auth.",
         },
       ],
-      testing:"Postman collection for API testing",
-      postmanLink:"https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-24c3de5c-5b7d-452b-9935-182819c909c3?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
+      testing: "Postman collection for API testing",
+      apiLiveLink:"",
+      postmanLink:
+        "https://v22222-8789.postman.co/workspace/Library~324a92fa-3868-456d-a813-6811c7743aa9/collection/24230181-24c3de5c-5b7d-452b-9935-182819c909c3?action=share&creator=24230181&active-environment=24230181-24d7b67a-db6b-4531-9b57-73d58cf014e3",
       link: "https://github.com/V-codess/ecommerce-microservices",
     },
   ];
   const container = document.getElementById("cardContainer");
 
   projects.map((project, index) => {
+    const apiLiveLink = project.apiLiveLink !== ""
+      ? `<p class="cardDescription">API live link - <a class="cardPostman" href="${project.liveApiLink}" target="_blank">Live Link</a></p>`
+      : `<p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>`;
     const isEven = (index + 1) % 2 === 0;
     container.innerHTML += isEven
       ? `
@@ -145,13 +146,15 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul style="list-style: none;">
             ${
               project.whatItDoes
-                .map((tech) => `<li  class="cardDescription">${tech.service}</li>`)
+                .map(
+                  (tech) => `<li  class="cardDescription">${tech.service}</li>`,
+                )
                 .join("") || ""
             }
            </ul>
           <h6 class="cardStack">API Testing</h6>
-          <p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>
-          <a target="_blank" href = "${project.link}"><button class="cardButton">View Project</button></a>
+          ${apiLiveLink}          
+<a target="_blank" href = "${project.link}"><button class="cardButton">View Project</button></a>
         </div>
       </div>
     `
@@ -164,20 +167,22 @@ document.addEventListener("DOMContentLoaded", function () {
            <ul class="cardList">
             ${
               project.techStack
-                .map((tech) => `<li class="list-item">${tech}</li>`).join("") || ""
+                .map((tech) => `<li class="list-item">${tech}</li>`)
+                .join("") || ""
             }
            </ul>
             <h6 class="cardStack">Outcomes</h6>
             <ul style="list-style: none;">
             ${
               project.whatItDoes
-                .map((tech) => `<li class="cardDescription">${tech.service}</li>`)
+                .map(
+                  (tech) => `<li class="cardDescription">${tech.service}</li>`,
+                )
                 .join("") || ""
             }
            </ul>
           <h6 class="cardStack">API Testing</h6>
-          <p class="cardDescription">${project.testing} - <a class="cardPostman" href="${project.postmanLink}" target="_blank">Collection</a></p>
-          <a target="_blank" href="${project.link}"><button class="cardButton">View Project</button></a>
+${apiLiveLink}          <a target="_blank" href="${project.link}"><button class="cardButton">View Project</button></a>
         </div>
         <img src="${project.image}" alt="${project.title}" class="cardImage">
       </div>
@@ -187,55 +192,71 @@ document.addEventListener("DOMContentLoaded", function () {
   const skills = [
     {
       name: "Backend Engineering",
-      list: [{
-        name:"REST API Design & TypeScript Integration"
-      },{
-        name:"Middleware Architecture"
-      },
-    {
-        name:"Authentication (JWT)"
-      },{
-        name:"Input Validation & Error Handling"
-      }],
+      list: [
+        {
+          name: "REST API Design & TypeScript Integration",
+        },
+        {
+          name: "Middleware Architecture",
+        },
+        {
+          name: "Authentication (JWT)",
+        },
+        {
+          name: "Input Validation & Error Handling",
+        },
+      ],
     },
     {
       name: "Databases & Data Modeling",
-      list: [{
-        name:"MongoDB Schema Design"
-      },{
-        name:"PostgreSQL Relational Modeling"
-      },
-    {
-        name:"Indexing & Query Optimization"
-      },{
-        name:"Pagination & Filtering"
-      }],
+      list: [
+        {
+          name: "MongoDB Schema Design",
+        },
+        {
+          name: "PostgreSQL Relational Modeling",
+        },
+        {
+          name: "Indexing & Query Optimization",
+        },
+        {
+          name: "Pagination & Filtering",
+        },
+      ],
     },
     {
       name: "Cloud & Infrastructure",
-      list: [{
-        name:"Microservices Architecture"
-      },{
-        name:"Docker Containerization"
-      },
-    {
-        name:"Environment Configuration"
-      },{
-        name:"AWS services"
-      }],
+      list: [
+        {
+          name: "Microservices Architecture",
+        },
+        {
+          name: "Docker Containerization",
+        },
+        {
+          name: "Environment Configuration",
+        },
+        {
+          name: "AWS services",
+        },
+      ],
     },
     {
       name: "Frontend Collaboration",
-      list: [{
-        name:"React API Integration"
-      },{
-        name:"Redux/Context State Management"
-      },
-    {
-        name:"Backend-Frontend Contract Design"
-      }, {
-        name:"Mobile app development with React Native"
-      }],
+      list: [
+        {
+          name: "React API Integration",
+        },
+        {
+          name: "Redux/Context State Management",
+        },
+        {
+          name: "Backend-Frontend Contract Design",
+        },
+        {
+          name: "Mobile app development with React Native",
+        },
+      ],
     },
   ];
   const skillsContainer = document.getElementById("skills-container");
@@ -246,7 +267,10 @@ document.addEventListener("DOMContentLoaded", function () {
            <ul class="skill-cardList">
             ${
               skill.list
-                .map((tech) => `<li  class="skill-cardDescription">${tech.name}</li>`)
+                .map(
+                  (tech) =>
+                    `<li  class="skill-cardDescription">${tech.name}</li>`,
+                )
                 .join("") || ""
             }
            </ul>
