@@ -587,24 +587,21 @@ box-shadow: 0 10px 12px #999797;
         left: 0;
         background-color: #fdc434;
         flex-direction: column;
-        width: 50%;
+        width: 40%;
         text-align: left;
-        padding: 1rem 0;
-        display: none;
         color: #fff;
         margin-left: 2rem;
-        opacity: 0.9;
+        padding: 1rem 0;
+        display: none;
     }
-
     .navBar {
         width: 100%;
     }
 
     .contents {
         color: #fff;
-        display: flex;
-        justify-content: flex-start;
-        align-self: flex-start;
+        text-align: left;
+        margin: 0 7.5rem;
     }
 
     .content.active {
@@ -703,11 +700,11 @@ box-shadow: 0 10px 12px #999797;
     }
 
     .skill-card {
-        width: 70%;
+        width: 90%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-        margin: 1em 1rem;
+        margin: 1em 1.3rem;
     }
     .skill-card:hover{
         transform: translateY(-5px); 
@@ -732,7 +729,12 @@ box-shadow: 0 10px 12px #999797;
     }
 
     .side-line {
-        display: none;
+        background-color: #fdc434;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 10.5rem;
     }
 
     .side-container {
